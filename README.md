@@ -18,8 +18,6 @@
   ㄴModel
 ```
 
-
-
 ### 1)Crawling.ipynb
 
 '오늘의 집' 상품, QnA, Review 데이터 수집
@@ -57,12 +55,14 @@
 ## :speaker: Usage
 
 ---
+
 ### Requirements
 ```python
-git clone 
-git clone
-git clone
-pip install Mecab
+pip install kss freeze konlpy glounnlp pytorch transformers
+
+cd Model
+git clone https://github.com/SKTBrain/KoBERT # KoBERT
+git clone https://github.com/ssut/py-hanspell # py-hanspell
 ```
 
 ### Installation
@@ -75,24 +75,24 @@ cd Today-s_Chatbot
 
 ### Matching System
 
-
 ```python
-????
+cd Model
+# 1-5 ipynb 다 실행 > Data & Model 생성
+# 6)Matching_System.ipynb 실행
 ```
-
 
 ### Chatbot
 
-
 ```python
-????
+# Chatbot > Base.yaml: path & paramter 수정 가능
+# Chatbot > templates > index.html: Desktop & Mobile ver 수정 가능
+cd Chatbot
+python app1.py
 ```
 
 ## :clipboard: Demo
 ---
-
-<img width="1230" alt="Result5" src="https://user-images.githubusercontent.com/55127132/127155733-15b1f653-24f9-4eb1-8157-a8cb756b0abe.png">
-
+![데모사진](https://user-images.githubusercontent.com/55127132/136147109-fe8edf4a-3b70-4dfc-88b1-1242885eac45.png)
 
 
 ## :speech_balloon: Contributors
