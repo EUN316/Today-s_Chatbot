@@ -15,7 +15,7 @@ def make_question_mecab_tokens(question):
     que_mecab = mecab.pos(question[0])
 
     # 조사 제거
-    morpheme = ['NNG','NNP','NNB','NNBC','NR','NP','VV','VA','VX','VCP','VCN','MM','MAG','MAJ','IC']    
+    morpheme = ['NNG','NNP','NNB','NNBC','NR','NP','VV','VA','VX','VCP','VCN','MM','MAG','MAJ','IC','SN']
     tmp = []
     que_tokens = []
 
@@ -27,8 +27,6 @@ def make_question_mecab_tokens(question):
         que_tokens.append('')
 
     # 한 문장으로 결합
-    que_tokens_str = [' '.join(que_tokens)+'\n']
-    
-    # print(que_tokens_str)
+    que_tokens_str = [' '.join(que_tokens)]
     
     return que_tokens_str
