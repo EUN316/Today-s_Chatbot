@@ -45,8 +45,8 @@ def input_BERTClassifier(cfg:dict, que_mecab):
     
     # load pre-trained KoBERTClassifier
     model = BERTClassifier(bertmodel, hidden_size, num_classes, dr_rate).to(device)
-    model.load_state_dict(torch.load(model_path+'epoch_5_qna_sep_model_4.pt', map_location=torch.device(device)))
-    model.eval() 
+    model.load_state_dict(torch.load(model_path+'type1_KoBERT_new.pt', map_location=torch.device(device)))
+    model.eval()
  
     # embedding & classification
     for batch_id, (token_ids, valid_length, segment_ids) in enumerate(input_dataloader):

@@ -5,7 +5,6 @@ let state = 'SUCCESS';
 
 // document.addEventListener('keydown', onClickAsEnter);
 
-
 // functions
 function Message(arg) {
   this.text = arg.text;
@@ -116,14 +115,19 @@ function requestChat() {
       setTimeout(function() {
         return sendMessage('상품명: ' + data['review_']['prod_name'][0], 'left');
       }, 1500);
-      // 유사한 질문 1개
-      setTimeout(function() {
-        return sendMessage('유사 질문: ' + data['qna_']['question'][0], 'left');
-      }, 2500);
-      setTimeout(function() {
-        return sendMessage('답변: ' + data['qna_']['answer'][0], 'left');
-      }, 4000);
 
+      // 유사한 질문 2개
+      for (i in data['qna_']['question']) {
+        (function(x) {
+          setTimeout(function() {
+            var xt = parseInt(x)+1;
+            sendMessage('유사 질문: ' + data['qna_']['question'][0], 'left');
+            sendMessage('답변: ' + data['qna_']['answer'][0], 'left');
+          }, 2500 + 1000 * x);
+        })(i);
+      };
+
+      // 유사한 리뷰 5개
       for (i in data['review_']['comment']) {
         (function(x) {
           setTimeout(function() {
@@ -157,7 +161,6 @@ function requestChat() {
   });
 }
 
-
 function onSendButtonClicked() {
   let messageText = getMessageText();
   sendMessage(messageText, 'right');
@@ -169,9 +172,6 @@ function onSendButtonClicked() {
   }
 
   if ((product_id !== null) && (question !== null)) {
-    // setTimeout(function() {
-    //   return sendMessage('처리 중입니다. 잠시만 기다려주세요.', 'left');
-    // }, 1000);
     setTimeout(function() {
       return requestChat();
     }, 2000);

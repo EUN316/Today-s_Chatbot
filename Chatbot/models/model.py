@@ -24,7 +24,7 @@ class BERTDataset(Dataset):
         transform = nlp.data.BERTSentenceTransform(
             bert_tokenizer, max_seq_length=max_len, pad=pad, pair=pair)
 
-        self.sentences = [transform([i[sent_idx]]) for i in dataset]
+        self.sentences = [transform([i]) for i in dataset] # sent_idx를 제거
         
     def __getitem__(self, i):
         return (self.sentences[i])
