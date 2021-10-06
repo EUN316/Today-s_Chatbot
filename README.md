@@ -1,24 +1,28 @@
-# Today-s_Chatbot
+# :house: Today-s_Chatbot
+---
 
 오늘의 집 데이터를 활용한 리뷰 기반 Q&A Framework model<br>
 사용자가 문의를 남기면 해당 문의의 답변으로 적합한 Q&A와 다른 사용자들이 작성한 리뷰를 채택하여 실시간 대화형으로 응답
 
-## Language & Tools
-  * Python
-  * PyTorch
-  * Jupyter notebook
-  * Flask
 
-## Installation
+## :vertical_traffic_light: Description
+---
 
-    $ git clone https://github.com/EUN316/Today-s_Chatbot.git
-    $ cd Today-s_Chatbot
+```
+ㄴChatbot
+ㄴData
+  ㄴBase
+  ㄴQnA
+  ㄴReview
+ㄴModel
+  ㄴModel
+```
 
-## Model
+
+
 ### 1)Crawling.ipynb
 
 '오늘의 집' 상품, QnA, Review 데이터 수집
-
 
 
 2)Preprocessing_QA.ipynb & 2)Preprocessing_Review.ipynb  
@@ -45,7 +49,73 @@
     
     
 ## Chatbot
+
   - Model을 Chatbot으로 구현
   - 문의와 상품번호를 입력받아 pretrained model로 입력받은 문의를 Embedding, Labeling 후 Cosine similarity를 계산하여 Threshold 이상인 Q&A 2개와 Review 5개 반환
 
-## Results
+
+## :speaker: Usage
+
+---
+### Requirements
+```python
+git clone 
+git clone
+git clone
+pip install Mecab
+```
+
+### Installation
+
+
+```python
+git clone https://github.com/EUN316/Today-s_Chatbot.git
+cd Today-s_Chatbot
+```
+
+### Matching System
+
+
+```python
+????
+```
+
+
+### Chatbot
+
+
+```python
+????
+```
+
+## :clipboard: Demo
+---
+
+<img width="1230" alt="Result5" src="https://user-images.githubusercontent.com/55127132/127155733-15b1f653-24f9-4eb1-8157-a8cb756b0abe.png">
+
+
+
+## :speech_balloon: Contributors
+
+---
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/eun723"><br /><sub><b>Kim Eun</b></sub></td>
+    <td align="center"><a href="https://github.com/hyz218"><br /><sub><b>Yoon HyeJung</b></sub></td>
+    <td align="center"><a href="https://github.com/EUN316"><br /><sub><b>Lee JungEun</b></sub></td>
+  </tr>
+</table>
+
+
+
+## :pencil2: Reference
+
+---
+
+[SKT KoBERT](https://github.com/SKTBrain/KoBERT)
+
+[Kochat](https://github.com/hyunwoongko/kochat)
+
+[py-hanspell](https://github.com/ssut/py-hanspell)
+
