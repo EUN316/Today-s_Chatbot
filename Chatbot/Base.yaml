@@ -1,10 +1,10 @@
 
 device: "cpu" # CPU or CUDA
 
-data_path : "./data/"
-model_path: "./data/Model/"
-qna_path: "./data/QnA/"
-review_path: "./data/Review/"
+data_path : ".../Data/"
+model_path: ".../Data/Model/"
+qna_path: ".../Data/QnA/"
+review_path: ".../Data/Review/"
 
 parameters:
     max_len: 210 # max input length
@@ -17,3 +17,5 @@ parameters:
     dr_rate: 0.5 # dropout rate
     hidden_size: 768 # BERTClassifier hidden size on training
     num_classes: 5 # number of class
+    sentiment: False # Custom parameter of Sentiment Analysis
+    wordcount: False # Custom parameter of Word Count

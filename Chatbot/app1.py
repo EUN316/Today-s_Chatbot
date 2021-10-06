@@ -20,18 +20,20 @@ def process():
     id_ = request.form['input_id']
     que_ = request.form['input_que']
     print(id_, que_)
+    
     # Load config dict
     config_path = "./Base.yaml"
     cfg = load_config(config_path)
+    
     # Q&A system 실행
     if (id_ != None) and (que_ != None):
         df, df1 = QnA_system(cfg, id_, que_)
         qna_dict = df.to_dict()
         review_dict = df1.to_dict()
         print('Q&A system done')
+    
     # 값 넘기기
     data = jsonify({'qna_':qna_dict, 'review_':review_dict})
-    print(data)
     return make_response(data, 201)
 
 
